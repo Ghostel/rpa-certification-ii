@@ -16,8 +16,8 @@ Library             RPA.Archive
 
 
 *** Variables ***
-${DOWNLOAD_PATH}=           ${OUTPUT DIR}${/}downloads
-${PDF_PATH}=                ${OUTPUT DIR}${/}pdf
+${DOWNLOAD_PATH}=           ${OUTPUT DIR}${/}output${/}downloads
+${PDF_PATH}=                ${OUTPUT DIR}${/}output${/}pdf
 ${ORDERLIST_FILE_NAME}=     orders.csv
 ${EXCEL_EXAMPLE}=           https://robotsparebinindustries.com/orders.csv
 
@@ -74,7 +74,7 @@ Store the receipt as PDF file    [Arguments]    ${order_number}
 Zip it all together
     #
     # ${liste_aller_dateien}=    List Directory    ${PDF_PATH}
-    Archive Folder With Zip    ${PDF_PATH}    rechnungen.zip
+    Archive Folder With Zip    ${PDF_PATH}    output${/}rechnungen.zip
     # FOR    ${datei}    IN    @{liste_aller_dateien}
     #    Log    ${liste_aller_dateien}
     # END
